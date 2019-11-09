@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Loader from 'react-spinners/PacmanLoader';
-import useCharacterForm from './hooks/useCharacterForm';
+import useCharacterForm from './hooks/useGetCharacters';
 import usePagination from './hooks/usePagination';
 
 const CharacterForm = () => {
-  const {
-    selectedCharacter,
-    characters,
-    loading,
-    error,
-    setters: { setSelectedCharater }
-  } = useCharacterForm();
+  const [selectedCharacter, setSelectedCharater] = useState(null);
+
+  const { characters, loading, error } = useCharacterForm();
 
   const {
     page,

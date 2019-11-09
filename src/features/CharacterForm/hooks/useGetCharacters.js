@@ -6,7 +6,6 @@ function useCharacterForm() {
   const [loading, setLoading] = useState(false);
   const [characters, setCharacters] = useState(null);
   const [error, setError] = useState(null);
-  const [selectedCharacter, setSelectedCharater] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -26,12 +25,8 @@ function useCharacterForm() {
 
   return {
     characters,
-    selectedCharacter,
     loading,
-    error,
-    setters: {
-      setSelectedCharater
-    }
+    error
   };
 }
 
